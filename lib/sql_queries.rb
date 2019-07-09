@@ -35,9 +35,13 @@ def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_
     GROUP BY projects.title HAVING SUM(pledges.amount) >= projects.funding_goal;"
 end
 
-def selects_oldest_bear_and_returns_name_and_age
-  "Write your SQL query here"
-  "SELECT name, age FROM bears ORDER BY age DESC LIMIT 1;"
+def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_amount
+"Write your SQL query Here"	  
+"SELECT users.name, SUM(pledges.amount)
+  FROM users
+  JOIN pledges ON users.id = pledges.user_id
+  GROUP BY users.name
+  ORDER BY SUM(pledges.amount);"
 end
 
 def select_youngest_bear_and_returns_name_and_age
