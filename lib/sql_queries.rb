@@ -16,10 +16,16 @@ def selects_the_titles_of_all_projects_and_their_pledge_amounts
   ORDER BY projects.title;"
 end
 
-def selects_all_bears_names_and_orders_in_alphabetical_order
-  "Write your SQL query here"
-  "SELECT name FROM bears ORDER BY name"
-end
+def selects_the_user_name_age_and_pledge_amount_for_all_pledges
+"Write your SQL query Here"	  
+"SELECT users.name, users.age, SUM(pledges.amount)
+  FROM users
+  INNER JOIN pledges
+  ON users.id = pledges.user_id
+  GROUP BY users.name
+  ORDER BY users.name;"
+end	end
+
 
 def selects_all_bears_names_and_ages_that_are_alive_and_order_youngest_to_oldest
   "Write your SQL query here"
