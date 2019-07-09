@@ -52,17 +52,9 @@ def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_ca
   WHERE projects.category = 'music';"
 end
 
-def selects_most_prominent_color_and_returns_with_count
-  "Write your SQL query here"
-  "SELECT color, COUNT(color) FROM bears GROUP BY color ORDER BY COUNT(*) DESC LIMIT 1;"
-end
-
-def counts_number_of_bears_with_goofy_temperaments
-  "Write your SQL query here"
-  "SELECT COUNT(temperament) FROM bears WHERE temperament = 'goofy';"
-end
-
-def selects_bear_that_killed_Tim
-  "Write your SQL query here"
-  "SELECT * FROM bears WHERE name IS NULL;"
+def selects_the_category_name_and_the_sum_total_of_the_all_its_pledges_for_the_book_category
+"Write your SQL query Here"	  "SELECT projects.category, SUM(pledges.amount)
+  FROM projects
+  JOIN pledges ON projects.id = pledges.project_id
+  WHERE projects.category = 'books';"
 end
