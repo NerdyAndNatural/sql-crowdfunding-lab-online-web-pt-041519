@@ -24,7 +24,7 @@ def selects_the_user_name_age_and_pledge_amount_for_all_pledges
   ON users.id = pledges.user_id
   GROUP BY users.name
   ORDER BY users.name;"
-end	end
+end
 
 
 def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
@@ -33,7 +33,7 @@ def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_
     FROM projects
     JOIN pledges ON projects.id = pledges.project_id
     GROUP BY projects.title HAVING SUM(pledges.amount) >= projects.funding_goal;"
-end	end
+end
 
 def selects_oldest_bear_and_returns_name_and_age
   "Write your SQL query here"
