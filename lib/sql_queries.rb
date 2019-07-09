@@ -9,12 +9,6 @@
 def selects_all_female_bears_return_name_and_age
   "Write your SQL query here"
   "SELECT name, age FROM bears WHERE gender = 'F';"
-  "SELECT projects.title, SUM(pledges.amount)
-  FROM projects
-  INNER JOIN pledges
-  ON projects.id = pledges.project_id
-  GROUP BY projects.id
-  ORDER BY projects.title;"
 end
 
 def selects_all_bears_names_and_orders_in_alphabetical_order
