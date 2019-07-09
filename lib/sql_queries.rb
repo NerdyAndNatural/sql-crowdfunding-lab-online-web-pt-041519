@@ -27,10 +27,13 @@ def selects_the_user_name_age_and_pledge_amount_for_all_pledges
 end	end
 
 
-def selects_all_bears_names_and_ages_that_are_alive_and_order_youngest_to_oldest
-  "Write your SQL query here"
-  "SELECT name, age FROM bears WHERE alive = 1 ORDER BY age ASC;"
-end
+def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
+"Write your SQL query Here"	  
+"SELECT projects.title, SUM(pledges.amount) - projects.funding_goal
+    FROM projects
+    JOIN pledges ON projects.id = pledges.project_id
+    GROUP BY projects.title HAVING SUM(pledges.amount) >= projects.funding_goal;"
+end	end
 
 def selects_oldest_bear_and_returns_name_and_age
   "Write your SQL query here"
