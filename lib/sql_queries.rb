@@ -44,9 +44,12 @@ def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_th
   ORDER BY SUM(pledges.amount);"
 end
 
-def select_youngest_bear_and_returns_name_and_age
-  "Write your SQL query here"
-  "SELECT name, age FROM bears ORDER BY age ASC LIMIT 1;"
+def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_category
+"Write your SQL query Here"	  
+"SELECT projects.category, pledges.amount
+  FROM projects
+  JOIN pledges ON projects.id = pledges.project_id
+  WHERE projects.category = 'music';"
 end
 
 def selects_most_prominent_color_and_returns_with_count
